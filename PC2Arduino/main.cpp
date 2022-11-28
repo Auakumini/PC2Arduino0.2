@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <Windows.h>
 #include "SerialPort.h"
 #include "windows.h"
 
@@ -23,6 +24,8 @@ int toArd(string command);
 
 int main()
 {
+    system("Color 0A");
+
     char selection = 0;
     int speed = 20; //8 er 1 i sekundet
     string message = "test besked";
@@ -43,7 +46,7 @@ int main()
     do
     {
         system("CLS");
-        cout << "  JUNO Communication 0.2\n";
+        cout << "  JUNO Communication 0.2 - COM8\n";
         cout << "  ====================================\n";
         cout << "  1.  Select speed\n";
         cout << "  2.  Select message\n";
@@ -178,7 +181,7 @@ int toArd(string command) {
 
         cout << "\nAttributes updated to Arduino!" << endl;
 
-        cout << "ARDUINO OUTPUT: " << output << endl; //output fra Arduino bliver cout'et her, måske ikke nødvendigt
+        cout << "ARDUINO OUTPUT: " << output << endl; //output fra Arduino bliver cout'et her, mÃ¥ske ikke nÃ¸dvendigt
 
         delete[] charArray;
 
